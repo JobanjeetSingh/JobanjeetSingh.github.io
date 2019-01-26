@@ -135,6 +135,7 @@ class Shortener(http.server.BaseHTTPRequestHandler):
             raise NotImplementedError("Step 5 isn't written yet!")
 
 if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 8000)) 
     server_address = ('', 8000)
     httpd = http.server.HTTPServer(server_address, Shortener)
     httpd.serve_forever()
